@@ -1,0 +1,24 @@
+JFrame(name=frame, size=320x640, title=frame.title, defaultCloseOperation=EXIT_ON_CLOSE):
+    - JPanel(name=deck):
+        - JPanel(name=connector):
+            - JLabel(name=usernameLabel, text=label.username)
+            - JLabel(name=passwordLabel, text=label.password)
+            - JTextField(name=usernameField)
+            - JPasswordField(name=passwordField)
+            - JButton(name=login, text=button.login, onAction=($validate,login))
+            - MigLayout: |
+                [pref]           [grow]  
+                usernameLabel    usernameField+*
+                passwordLabel    passwordField+*
+                                      >login+*=1    
+        - JPanel(name=home):
+            - JScrollPane(name=scroller):
+                JList(name=list)
+            - MigLayout: |
+                [grow]
+                scroller  [grow] 
+        - CardLayout(name=cards): [connector,home]
+
+validate:
+    - usernameField.text: {label: label.username, mandatory: true} 
+    - passwordField.text: {label: label.password, mandatory: true}
