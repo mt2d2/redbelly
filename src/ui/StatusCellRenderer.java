@@ -55,7 +55,7 @@ public class StatusCellRenderer implements ListCellRenderer
 						layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(icon).addComponent(name)).addPreferredGap(
 						LayoutStyle.ComponentPlacement.RELATED).addComponent(text, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE).addContainerGap(
 						169, Short.MAX_VALUE)).addGroup(GroupLayout.Alignment.TRAILING,
-				layout.createSequentialGroup().addContainerGap(55, Short.MAX_VALUE).addComponent(date).addGap(229, 229, 229)));
+				layout.createSequentialGroup().addContainerGap(55, Short.MAX_VALUE).addComponent(date)));
 
 		return panel;
 	}
